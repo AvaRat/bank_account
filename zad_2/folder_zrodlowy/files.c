@@ -14,7 +14,7 @@
 
 
 
-void save_and_free(operacja *op_list, dane *lista_odb)
+int save_and_free(operacja *op_list, dane *lista_odb)
 {
 	unsigned int n_cont = 0, n_op = 0;
 	FILE *fp_k = fopen(KONTAKTY, "wb");
@@ -32,7 +32,9 @@ void save_and_free(operacja *op_list, dane *lista_odb)
 		n_cont++;
 	}
 	CHECK(1, fwrite(&n_cont, sizeof(unsigned int), 1, fp_k))
-	save_contacts(fp_k, lista_odb);
+
+	FUN_CHECK(save_contacts(fp_k, lista_odb))
+
 	fclose(fp_k);
 
 
@@ -42,9 +44,10 @@ void save_and_free(operacja *op_list, dane *lista_odb)
 		n_op++;
 	}
 	CHECK(1, fwrite(&n_op, sizeof(unsigned int), 1, fp_op))
-	save_history(fp_op, op_list);
+	FUN_CHECK(save_history(fp_op, op_list))
 	fclose(fp_op);
 	free_all(lista_odb, op_list);
+	return 0;
 }
 void free_all(dane *contacts, operacja *history)
 {
@@ -64,7 +67,7 @@ void free_all(dane *contacts, operacja *history)
 		free(history);
 	}
 }
-void read_file(dane ** cont_list, operacja **history)
+int read_file(dane ** cont_list, operacja **history)
 {
 	FILE *fp_contacts = fopen(KONTAKTY, "rb");
 	FILE *fp_history = fopen(HISTORIA, "rb");
@@ -73,12 +76,13 @@ void read_file(dane ** cont_list, operacja **history)
 		printf("Nie mozna otworzyc pliku \n");
 		exit(EXIT_FAILURE);
 	}
-	read_contacts(fp_contacts, cont_list);
-	read_history(fp_history, history);
+	FUN_CHECK(read_contacts(fp_contacts, cont_list))
+	FUN_CHECK(read_history(fp_history, history))
 	fclose(fp_contacts);
 	fclose(fp_history);
+	return 0;
 }
-void read_contacts(FILE *fp_k, dane **cont_list)
+int read_contacts(FILE *fp_k, dane **cont_list)
 {
 	unsigned int n_cont = 0;	// liczba kontaktow
 	unsigned int n = 0;
@@ -108,8 +112,9 @@ void read_contacts(FILE *fp_k, dane **cont_list)
 			n_read++;	//liczba odczytanych kontaktow zwieksza sie
 		}
 	printf("**contacts uploaded**\n");
+	return 0;
 }
-void save_contacts(FILE *fp_k, dane *wsk_odb)
+int save_contacts(FILE *fp_k, dane *wsk_odb)
 {
 	unsigned int n = 0;
 	while(wsk_odb != NULL)
@@ -135,8 +140,9 @@ void save_contacts(FILE *fp_k, dane *wsk_odb)
 			wsk_odb = wsk_odb->next_odb;
 		}
 		printf("**contacts saved**\n");
+		return 0;
 }
-void save_history(FILE *fp_op, operacja *wsk_op)
+int save_history(FILE *fp_op, operacja *wsk_op)
 {
 	unsigned int n = 0;
 
@@ -162,8 +168,9 @@ void save_history(FILE *fp_op, operacja *wsk_op)
 	}
 
 	printf("**History saved**\n");
+	return 0;
 }
-void read_history(FILE *fp_op, operacja **history)
+int read_history(FILE *fp_op, operacja **history)
 {
 	unsigned int n = 0;			// dlugosc słów
 	unsigned int n_op = 0;		// liczba operacji do wczytania
@@ -194,5 +201,6 @@ void read_history(FILE *fp_op, operacja **history)
 	}
 
 	printf("**history uploaded**\n");
+	return 0;
 }
 

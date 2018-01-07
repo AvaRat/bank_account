@@ -16,16 +16,16 @@
 #define CHECK(LEN,F) {size_t k = F; if \
 		( k != LEN){printf("linia: %d: \
 		pobrano/zapisano %zu,  zamiast %d\n",\
-		__LINE__, k, LEN); exit(EXIT_FAILURE);}}
+		__LINE__, k, LEN); return -1;}}
 
 
-void read_contacts(FILE *, dane **);
-void read_history(FILE *, operacja **);
-void read_file(dane **, operacja **);
+int read_contacts(FILE *, dane **);
+int read_history(FILE *, operacja **);
+int read_file(dane **, operacja **);
 
-void save_contacts(FILE *, dane *);
-void save_history(FILE *, operacja *);
-void save_and_free(operacja *, dane *);
+int save_contacts(FILE *, dane *);
+int save_history(FILE *, operacja *);
+int save_and_free(operacja *, dane *);
 void free_all(dane *, operacja *);
 
 

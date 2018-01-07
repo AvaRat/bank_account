@@ -54,5 +54,32 @@ void from_scratch(dane **kontakty, operacja **history)
 	}
 	printf("Koniec testu\n");
 }
+void add_a_lot(dane **kontakty, operacja **history)
+{
+	unsigned int n;
+	printf("po kazdej operacji nacisnij enter\n\n");
+	printf("Tworzenie 10000 kontaktow\nwcisnij enter\n\n");
+	getchar();
+	for(n=0;  n<10000;  n++)
+	{
+		dodaj_odbiorce(kontakty, NEW, TEST);
+	}
+	print_list_odb(kontakty, SMALL);
+	printf("\ntworzenie 10000 operacji\n");
+	printf("**press enter**\n\n");
+	getchar();
+	for(n=0;  n<10000;  n++)
+	{
+	doladuj_konto(history, TEST);
+	}
+	printf("**press enter**\n");
+	getchar();
+	print_history(*history);
+	printf("**press enter**\n");
+	getchar();
+	wysw_stan(*history);
+	printf("nacisnij enter aby zakonczyc\n");
+	getchar();
+}
 
 

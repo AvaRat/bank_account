@@ -12,8 +12,9 @@
 #define S 40	//maksymalna dlugosc nazwy
 
 #define OPCJE "\n'q' - zamknij program\t'd' - doladuj konto\t'w' - wyswietl stan\t'h' - pokaz historie operacji\n\t\t\t'p' - przelew\t'n' - nowy kontakt\t'k' - kontakty\t'e' - edycja kontaktow\n"
-#define ALOK_CHECK(wsk) {if(wsk == NULL){printf("Blad alokacji pamieci w lini: %d\n", __LINE__); exit(EXIT_FAILURE);}}
-
+#define ALOK_CHECK(wsk) {if(wsk == NULL){printf("Blad alokacji pamieci w lini: %d\n", __LINE__); return -1;}}
+#define FUN_CHECK(fun) {if(fun != 0) return -1;}
+#define FUN_M_CHECK(fun) {if(fun != 0) {printf("cos poszlo nie tak\nsprobuj jeszcze raz\n"); break;}}
 
 typedef struct ad{
 	char street[S];
@@ -37,18 +38,19 @@ typedef struct op{
 	struct op *next_op;
 }operacja;
 
-typedef enum  {NEW, EXISTING}cont;
-typedef enum  {SMALL, BIG}what_list;
+typedef enum	{NEW, EXISTING}what_cont;
+typedef enum	{SMALL, BIG}what_list;
+typedef enum	{REAL, TEST}test;
 
-void doladuj_konto(operacja **);
+int doladuj_konto(operacja **, test);
 void wysw_stan(operacja *);
-void nowy_przelew(dane **, operacja **);
-void dodaj_odbiorce(dane **, cont);
+int nowy_przelew(dane **, operacja **);
+int dodaj_odbiorce(dane **, what_cont, test);
 dane **find_cont(dane **);
 void print_list_odb(dane **, unsigned int);
 void delete_contact(dane ** , dane *);
 void print_history(operacja *);
-void edit_contacts(dane **);
+int edit_contacts(dane **);
 void get_data(char *);
 
 #endif /* TEMPLATES_H_ */

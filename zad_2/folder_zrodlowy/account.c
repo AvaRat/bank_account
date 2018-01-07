@@ -1,24 +1,4 @@
-/*
- *
- *(zrobione) ???jak zrobć, żeby w pliku zapisywać informację o historii, stanie konta, kontaktach itp, żeby można było zamknąć program, otworzyć go ponownie i nie stracić danych??(zrobione)
- *??logowanie sie do ssh na serwer??
 
- * dokumentacja:
- * unit_test: arg wywołania funkcji żeby szybciej odpalać tylko usuwanie(min 2)
- * obsługa błędu
- *#define ALOK_CHECK(wsk) {if(wsk == NULL){printf("Blad alokacji pamieci w lini: %d\n", __LINE__); exit(EXIT_FAILURE);}}
- *
- *
- *
- *potencjalne błędy:
- *-usuwanie pierwszego kontaktu
- *-wyszukiwanie kontaktu po nazwisku, którego nie ma
- *-nowy przelew kiedy nie ma zadnych kontaktow
-
- *funkcje do testowania
- *funkcja do usuwanie historii(zerowanie pliku)
- *funkcja do zerowania salda
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,7 +21,11 @@ int main(int arg_c, char *arg_v[])
 	if(arg_c == 1)
 	{
 	printf("main\n");
-	read_file(&kontakty, &history);
+	if(read_file(&kontakty, &history) != 0)
+	{
+		printf("Blad przy wczytywaniu bazy danych!!\n");
+		return -1;
+	}
 	printf("witaj w koncie bankowym!\n");
 	printf("jaką operacje chcesz wykonac?\n\t\t\t %s\n", OPCJE);
 
@@ -49,19 +33,19 @@ int main(int arg_c, char *arg_v[])
 	{
 		switch(choice)
 		{
-		case 'd': doladuj_konto(&history);
+		case 'd': FUN_M_CHECK(doladuj_konto(&history, REAL))
 			break;
 		case 'w': wysw_stan(history);
 			break;
-		case 'h': print_history(history);
+		case 'h':  print_history(history);
 			break;
-		case 'p': nowy_przelew(&kontakty, &history);
+		case 'p':  FUN_M_CHECK(nowy_przelew(&kontakty, &history))
 			break;
-		case 'n': dodaj_odbiorce(&kontakty, NEW);
+		case 'n':  FUN_M_CHECK(dodaj_odbiorce(&kontakty, NEW, REAL))
 			break;
-		case 'k': print_list_odb(&kontakty, BIG);
+		case 'k':  print_list_odb(&kontakty, BIG);
 			break;
-		case 'e': edit_contacts(&kontakty);
+		case 'e':  FUN_M_CHECK(edit_contacts(&kontakty))
 			break;
 		default: printf("%s\n", OPCJE);
 			break;
@@ -79,15 +63,20 @@ int main(int arg_c, char *arg_v[])
 		{
 			printf("test2\n");
 			from_scratch(&kontakty, &history);
+		}else if(strcmp(arg_v[1], "test3") == 0)
+		{
+			printf("test3\n");
+			add_a_lot(&kontakty, &history);
 		}else
 			printf("use:\n<program> - normalne otwarcie programu\n"
 							"<program> test1 - test usuniecia pierwszego kontaktu z listy\n"
 							"<program> test2 - test sytuacji, gdy zaczynamy program z pustym plikiem\n");
 
+		printf("zwalnianie pamieci\n");
+		getchar();
 		free_all(kontakty, history);
 	}else if(arg_c > 2)
 	{
-		read_file(&kontakty, &history);
 		printf("use:\n<program> - normalne otwarcie programu\n\\"
 				"<program> test1 - test usuniecia pierwszego kontaktu z listy\n\\"
 				"<program> test2 - test sytuacji, gdy zaczynamy program z pustym plikiem\n");
@@ -97,12 +86,16 @@ int main(int arg_c, char *arg_v[])
 
 }
 
-void doladuj_konto(operacja **lista_op)
+int doladuj_konto(operacja **lista_op, test use)
 {
 	float n = 0;
 	float saldo = 0;
-	printf("Wpisz wartosc o ile chcesz doladowac swoje konto:\n");
-	scanf("%f", &n);
+	if(use == REAL)
+	{
+		printf("Wpisz wartosc o ile chcesz doladowac swoje konto:\n");
+		scanf("%f", &n);
+	}else if(use == TEST)
+		n = 5;
 
     time_t mytime;
     mytime = time(NULL);
@@ -114,13 +107,15 @@ void doladuj_konto(operacja **lista_op)
 		wsk_op = &((*wsk_op)->next_op);
 	}
 	*wsk_op =(operacja*) malloc(sizeof(operacja));
+	ALOK_CHECK(*wsk_op)
 	strcpy((*wsk_op)->tytul, "Przelew zewnetrzny przychodzacy");
 	(*wsk_op)->value = n;
 	(*wsk_op)->saldo = saldo + n;
-	strncpy((*wsk_op)->odbiorca.surname, "Kalinski", 9);			// ??czemu to nie działa??
+	strncpy((*wsk_op)->odbiorca.surname, "Kalinski", 9);
 	(*wsk_op)->next_op = NULL;
 	strcpy((*wsk_op)->time, ctime(&mytime));
 	printf("doladowano o %.2f zl\n", n);
+	return 0;
 
 }
 void wysw_stan(operacja *lista_op)
@@ -134,7 +129,7 @@ void wysw_stan(operacja *lista_op)
 		printf("Stan Twojego konta na dzien %s %s:\n\t\t%.2f zl\n",__DATE__, __TIME__, wsk_op->saldo);
 	}
 }
-void nowy_przelew(dane **lista_odb, operacja **lista_op)
+int nowy_przelew(dane **lista_odb, operacja **lista_op)
 {
 	float n;
 	char tytul[S];
@@ -166,6 +161,7 @@ void nowy_przelew(dane **lista_odb, operacja **lista_op)
 			wsk_op = &((*wsk_op)->next_op);
 		}
 		*wsk_op =(operacja *) malloc(sizeof(operacja));
+		ALOK_CHECK(*wsk_op)
 		(*wsk_op)->odbiorca = *wsk_odb;	//znaleziona po nazwisku osoba jest przypisywana do operacji
 		strncpy((*wsk_op)->tytul, tytul, strlen(tytul)+1);
 		(*wsk_op)->value = n;
@@ -174,8 +170,9 @@ void nowy_przelew(dane **lista_odb, operacja **lista_op)
 		strcpy((*wsk_op)->time, ctime(&mytime));
 		printf("Odjeto %.2f zl z Twojego konta\n", n);
 	}
+	return 0;
 }
-void dodaj_odbiorce(dane **lista_odb, cont contact)
+int dodaj_odbiorce(dane **lista_odb, what_cont contact, test use)
 {
 	char name[N];
 	char surname[S];
@@ -183,20 +180,30 @@ void dodaj_odbiorce(dane **lista_odb, cont contact)
 	int nr;
 	char city[N];
 
-	printf("podaj imie: ");
-	scanf("%s", name);
+	if(use == REAL)
+	{
+		printf("podaj imie: ");
+		scanf("%s", name);
 
-	printf("podaj nazwisko: ");
-	scanf("%s", surname);
+		printf("podaj nazwisko: ");
+		scanf("%s", surname);
 
-	printf("podaj ulice: ");
-	get_data(street);
+		printf("podaj ulice: ");
+		get_data(street);
 
-	printf("podaj nr domu: ");
-	scanf("%d", &nr);
+		printf("podaj nr domu: ");
+		scanf("%d", &nr);
 
-	printf("miasto: ");
-	get_data(city);
+		printf("miasto: ");
+		get_data(city);
+	}else if(use == TEST)
+	{
+		strcpy(name,"test_name");
+		strcpy(surname,"test_sur");
+		strcpy(street, "test_street");
+		strcpy(city, "test_city");
+		nr = 5;
+	}
 
 	dane **wsk_odb = lista_odb;
 
@@ -204,14 +211,16 @@ void dodaj_odbiorce(dane **lista_odb, cont contact)
 	{
 		for(;  *wsk_odb != NULL;  wsk_odb = &((*wsk_odb)->next_odb) ){}
 		*wsk_odb = (dane*) malloc(sizeof(dane));
+		ALOK_CHECK(*wsk_odb)
+		(*wsk_odb)->next_odb = NULL;
 	}
 	strncpy((*wsk_odb)->name, name, strlen(name)+1);
 	strncpy((*wsk_odb)->surname, surname, strlen(surname)+1);
 	strncpy((*wsk_odb)->adress.city, city, strlen(city)+1);
 	strncpy((*wsk_odb)->adress.street, street, strlen(street)+1);
 	(*wsk_odb)->adress.nr = nr;
-	(*wsk_odb)->next_odb = NULL;
 
+	return 0;
 }
 dane **find_cont(dane **kontakty)
 {
@@ -252,7 +261,7 @@ void print_list_odb(dane **contacts, what_list list)
 			printf("%d: %s %s\n", n, wsk_odb->name, wsk_odb->surname);
 	}
 }
-void edit_contacts(dane **contacts)
+int edit_contacts(dane **contacts)
 {
 	char choice;
 	dane *wsk_odb;
@@ -262,7 +271,7 @@ void edit_contacts(dane **contacts)
 	else
 	{
 		wsk_odb = *(find_cont(contacts));
-		printf("aby usunac kontakt wcisnij 'd'\taby edytowac 'e'\n");
+		printf("aby usunac kontakt wcisnij 'd'\taby edytowac 'e'\nnacisniej enter aby wrocic do menu\n");
 
 		if(getchar()=='\n')
 		{
@@ -276,11 +285,12 @@ void edit_contacts(dane **contacts)
 				break;
 
 			case 'e':
-				dodaj_odbiorce(&wsk_odb, EXISTING);
+				FUN_CHECK(dodaj_odbiorce(&wsk_odb, EXISTING, REAL))
 				break;
 			default: break;
 		}
 	}
+	return 0;
 }
 
 
@@ -307,6 +317,7 @@ void delete_contact(dane ** contacts, dane *wanted)
 		(*contacts) = (*contacts)->next_odb;
 		free(wanted);
 	}
+
 }
 
 void print_history(operacja *op)

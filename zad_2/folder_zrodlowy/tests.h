@@ -12,6 +12,7 @@
 
 void usun_pierwszy(dane **);
 int from_scratch(dane **, operacja **);
+void add_a_lot(dane **, operacja **);
 
 
 #endif /* TESTS_H_ */
