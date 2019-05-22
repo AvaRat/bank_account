@@ -1,0 +1,13 @@
+digraph "save_and_free"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node6 [label="save_and_free",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="save_contacts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$files_8c.html#a34bbd5c253415b4b4ecc29592b8ca0b4",tooltip="funkcja zapisująca kontakty z listy do pliku w formacie binarnym "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="save_history",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$files_8c.html#ac7b3ce31e85c4140c9f7333d48b44774",tooltip="funkcja zapisująca historię operacji z listy do pliku w formacie binarnym "];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="free_all",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$files_8c.html#ab9fafd4f86829cbc3daf27804065b9ab",tooltip="funkcja do zwalniania pamięci z list operacji i kontaktów "];
+}
