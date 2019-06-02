@@ -1,0 +1,233 @@
+\hypertarget{files_8h}{}\doxysection{files.\+h File Reference}
+\label{files_8h}\index{files.h@{files.h}}
+{\ttfamily \#include \char`\"{}templates.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{files_8h_a2da7a778d489e2b71e2b9789c2471c4c}{K\+O\+N\+T\+A\+K\+TY}}~\char`\"{}contacts.\+dat\char`\"{}
+\item 
+\#define \mbox{\hyperlink{files_8h_a81d76bf940c05e19964253e02e2bf268}{H\+I\+S\+T\+O\+R\+IA}}~\char`\"{}history.\+dat\char`\"{}
+\item 
+\#define \mbox{\hyperlink{files_8h_a2cc5bd9f68004f5ec6ba1799549fea85}{C\+H\+E\+CK}}(L\+EN,  F)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{files_8h_a2ebb4be5938d98d4f49c0baabd8fcb2f}{read\+\_\+contacts}} (F\+I\+LE $\ast$, \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em funkcja czytająca kontakty z pliku i alokująca na nie pamięć \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{files_8h_a494c0aaf5d9174be982f63e8618d5db4}{read\+\_\+history}} (F\+I\+LE $\ast$, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em funkcja wczytująca historię i alokująca pamięć na listę operacji \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{files_8h_aab9b94930278c225c97da255c2675517}{read\+\_\+file}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$)
+\item 
+int \mbox{\hyperlink{files_8h_a330a1597409cc466d8c23d478c0950c8}{save\+\_\+contacts}} (F\+I\+LE $\ast$, \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$)
+\begin{DoxyCompactList}\small\item\em funkcja zapisująca kontakty z listy do pliku w formacie binarnym \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{files_8h_a6cd8b3a5e67a6c6501392ca943aba82d}{save\+\_\+history}} (F\+I\+LE $\ast$, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$)
+\begin{DoxyCompactList}\small\item\em funkcja zapisująca historię operacji z listy do pliku w formacie binarnym \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{files_8h_a0bf8570263d75319fc8911e49b2e5484}{save\+\_\+and\+\_\+free}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$, \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$)
+\item 
+void \mbox{\hyperlink{files_8h_a7c7b5ad811fb9da179ab2bda375d745b}{free\+\_\+all}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$)
+\begin{DoxyCompactList}\small\item\em funkcja do zwalniania pamięci z list operacji i kontaktów \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{files_8h_a2cc5bd9f68004f5ec6ba1799549fea85}\label{files_8h_a2cc5bd9f68004f5ec6ba1799549fea85}} 
+\index{files.h@{files.h}!CHECK@{CHECK}}
+\index{CHECK@{CHECK}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{CHECK}{CHECK}}
+{\footnotesize\ttfamily \#define C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{L\+EN,  }\item[{}]{F }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\textcolor{keywordtype}{size\_t} k = F; \textcolor{keywordflow}{if} \(\backslash\)}
+\DoxyCodeLine{        ( k != LEN)\{printf(\textcolor{stringliteral}{"linia: \%d: \(\backslash\)        pobrano/zapisano \%zu,  zamiast \%d\(\backslash\)n"},\(\backslash\)}
+\DoxyCodeLine{        \_\_LINE\_\_, k, LEN); \textcolor{keywordflow}{return} -\/1;\}\}}
+
+\end{DoxyCode}
+makro kt�re sprawdza, czy ilo�� znak�w pobranych przez funkcje fread() i fwrite() jest zgodna z oczekiwan� ich liczb� \mbox{\Hypertarget{files_8h_a81d76bf940c05e19964253e02e2bf268}\label{files_8h_a81d76bf940c05e19964253e02e2bf268}} 
+\index{files.h@{files.h}!HISTORIA@{HISTORIA}}
+\index{HISTORIA@{HISTORIA}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{HISTORIA}{HISTORIA}}
+{\footnotesize\ttfamily \#define H\+I\+S\+T\+O\+R\+IA~\char`\"{}history.\+dat\char`\"{}}
+
+\mbox{\Hypertarget{files_8h_a2da7a778d489e2b71e2b9789c2471c4c}\label{files_8h_a2da7a778d489e2b71e2b9789c2471c4c}} 
+\index{files.h@{files.h}!KONTAKTY@{KONTAKTY}}
+\index{KONTAKTY@{KONTAKTY}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{KONTAKTY}{KONTAKTY}}
+{\footnotesize\ttfamily \#define K\+O\+N\+T\+A\+K\+TY~\char`\"{}contacts.\+dat\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{files_8h_a7c7b5ad811fb9da179ab2bda375d745b}\label{files_8h_a7c7b5ad811fb9da179ab2bda375d745b}} 
+\index{files.h@{files.h}!free\_all@{free\_all}}
+\index{free\_all@{free\_all}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{free\_all()}{free\_all()}}
+{\footnotesize\ttfamily void free\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{contacts,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{history }\end{DoxyParamCaption})}
+
+
+
+funkcja do zwalniania pamięci z list operacji i kontaktów 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$contacts} & lista kontaktów \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em $\ast$history} & lista operacji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{files_8h_a2ebb4be5938d98d4f49c0baabd8fcb2f}\label{files_8h_a2ebb4be5938d98d4f49c0baabd8fcb2f}} 
+\index{files.h@{files.h}!read\_contacts@{read\_contacts}}
+\index{read\_contacts@{read\_contacts}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{read\_contacts()}{read\_contacts()}}
+{\footnotesize\ttfamily int read\+\_\+contacts (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp\+\_\+k,  }\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{cont\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+funkcja czytająca kontakty z pliku i alokująca na nie pamięć 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$fp\+\_\+k} & wskaźnik na strumień do pliku z zapisanymi kontaktami \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em $\ast$$\ast$cont\+\_\+list} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & kiedy funkcja zakończy działanie z sukcesem \\
+\hline
+{\em -\/1} & kiedy przy odczycie coś się nie będzie zgadzało \\
+\hline
+\end{DoxyRetVals}
+$<$ liczba kontaktow
+
+$<$uniwersalna zmienna
+
+$<$ liczba odczytanych kontaktów
+
+$<$odczytanie ile jest kontaktów w bazie danych
+
+$<$liczba odczytanych kontaktow zwieksza sie\mbox{\Hypertarget{files_8h_aab9b94930278c225c97da255c2675517}\label{files_8h_aab9b94930278c225c97da255c2675517}} 
+\index{files.h@{files.h}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily int read\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{cont\+\_\+list,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{history }\end{DoxyParamCaption})}
+
+ogólna funkcja zawierająca funkcja do odczytywanie danych z pliku i tworzenia struktur na ich podstawie 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$$\ast$cont\+\_\+list} & pusta lista kontaktów, której zostanie zaalokowana pamięć \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em $\ast$$\ast$history} & pusta lista operacji, której zostanie zaalokowana pamięć \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & gdy funkcja zakończy działanie sukcesem \\
+\hline
+{\em -\/1} & gdy funkcje wewnątrz napotkają jakiś błąd \\
+\hline
+{\em -\/2} & gdzy funkcja nie będzie mogła otworzyć pliku \\
+\hline
+\end{DoxyRetVals}
+$<$plik otwierany jest w trybie do odczytu binarnego (nie można go zmieniać)
+
+$<$plik otwierany jest w trybie do odczytu binarnego (nie można go zmieniać)\mbox{\Hypertarget{files_8h_a494c0aaf5d9174be982f63e8618d5db4}\label{files_8h_a494c0aaf5d9174be982f63e8618d5db4}} 
+\index{files.h@{files.h}!read\_history@{read\_history}}
+\index{read\_history@{read\_history}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{read\_history()}{read\_history()}}
+{\footnotesize\ttfamily int read\+\_\+history (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp\+\_\+op,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{history }\end{DoxyParamCaption})}
+
+
+
+funkcja wczytująca historię i alokująca pamięć na listę operacji 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$fp\+\_\+op} & strumień pliku z historią operacji \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$history} & historia operacji \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & kiedy funkcja zakończy działanie z sukcesem \\
+\hline
+{\em -\/1} & kiedy przy odczycie coś się nie będzie zgadzało \\
+\hline
+\end{DoxyRetVals}
+$<$ dlugosc słów
+
+$<$ liczba operacji do wczytania
+
+$<$ liczba odczytanych operacji
+
+$<$ za\mbox{[}isanie na początku pliku ile jest operacji wykonanych do tej pory w bazie danych\mbox{\Hypertarget{files_8h_a0bf8570263d75319fc8911e49b2e5484}\label{files_8h_a0bf8570263d75319fc8911e49b2e5484}} 
+\index{files.h@{files.h}!save\_and\_free@{save\_and\_free}}
+\index{save\_and\_free@{save\_and\_free}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{save\_and\_free()}{save\_and\_free()}}
+{\footnotesize\ttfamily int save\+\_\+and\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{op\+\_\+list,  }\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{lista\+\_\+odb }\end{DoxyParamCaption})}
+
+główna funkcja zapisująca i zwalniająca pamięć 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$op\+\_\+list} & lista operacji \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em $\ast$lista\+\_\+odb} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & przy pomyślnym zakończeniu \\
+\hline
+{\em -\/1} & gdy funkcja napotka jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+$<$ otwarcie strumienia pliku z bazą zapisanych kontaktów w trybie do N\+A\+D\+P\+I\+SU, czyli plik zostaje nadpisany bazą danych z pamięci podręcznej
+
+$<$ otwarcie strumienia pliku z bazą zapisanych operacji w trybie do N\+A\+D\+P\+I\+SU, czyli plik zostaje nadpisany bazą danych z pamięci podręcznej\mbox{\Hypertarget{files_8h_a330a1597409cc466d8c23d478c0950c8}\label{files_8h_a330a1597409cc466d8c23d478c0950c8}} 
+\index{files.h@{files.h}!save\_contacts@{save\_contacts}}
+\index{save\_contacts@{save\_contacts}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{save\_contacts()}{save\_contacts()}}
+{\footnotesize\ttfamily int save\+\_\+contacts (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp\+\_\+k,  }\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{wsk\+\_\+odb }\end{DoxyParamCaption})}
+
+
+
+funkcja zapisująca kontakty z listy do pliku w formacie binarnym 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$fp\+\_\+k} & strumień pliku z kontaktami \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$wsk\+\_\+odb} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & kiedy funkcja zakończy działanie z sukcesem \\
+\hline
+{\em -\/1} & kiedy przy zapisie coś się nie będzie zgadzało \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{files_8h_a6cd8b3a5e67a6c6501392ca943aba82d}\label{files_8h_a6cd8b3a5e67a6c6501392ca943aba82d}} 
+\index{files.h@{files.h}!save\_history@{save\_history}}
+\index{save\_history@{save\_history}!files.h@{files.h}}
+\doxysubsubsection{\texorpdfstring{save\_history()}{save\_history()}}
+{\footnotesize\ttfamily int save\+\_\+history (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp\+\_\+op,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{wsk\+\_\+op }\end{DoxyParamCaption})}
+
+
+
+funkcja zapisująca historię operacji z listy do pliku w formacie binarnym 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$fp\+\_\+op} & strumień pliku z historią operacji \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$wsk\+\_\+odb} & lista operacji \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & kiedy funkcja zakończy działanie z sukcesem \\
+\hline
+{\em -\/1} & kiedy przy zapisie coś się nie będzie zgadzało \\
+\hline
+\end{DoxyRetVals}

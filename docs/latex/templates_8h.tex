@@ -1,0 +1,394 @@
+\hypertarget{templates_8h}{}\doxysection{templates.\+h File Reference}
+\label{templates_8h}\index{templates.h@{templates.h}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structad}{ad}}
+\begin{DoxyCompactList}\small\item\em struktura pomocnicza do przechowywania adres{\ucr}w \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structda}{da}}
+\begin{DoxyCompactList}\small\item\em struktura b{\ucr}d{\ucr}ca podstaw{\ucr} listy kontakt{\ucr}w \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structop}{op}}
+\begin{DoxyCompactList}\small\item\em g{\ucr}{\ucr}wna struktura programu, gdzie przechowywane s{\ucr} wszystkie operacjie i stan konta \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{templates_8h_a0240ac851181b84ac374872dc5434ee4}{N}}~30
+\item 
+\#define \mbox{\hyperlink{templates_8h_af933676109efed7ab34cea71d748a517}{S}}~40
+\item 
+\#define \mbox{\hyperlink{templates_8h_a910589e44deac11c3957ec55992cac52}{O\+P\+C\+JE}}~\char`\"{}\textbackslash{}n\textquotesingle{}q\textquotesingle{} -\/ zamknij program\textbackslash{}t\textquotesingle{}d\textquotesingle{} -\/ doladuj konto\textbackslash{}t\textquotesingle{}w\textquotesingle{} -\/ wyswietl stan\textbackslash{}t\textquotesingle{}h\textquotesingle{} -\/ pokaz historie operacji\textbackslash{}n\textbackslash{}t\textbackslash{}t\textbackslash{}t\textquotesingle{}p\textquotesingle{} -\/ przelew\textbackslash{}t\textquotesingle{}n\textquotesingle{} -\/ nowy kontakt\textbackslash{}t\textquotesingle{}k\textquotesingle{} -\/ kontakty\textbackslash{}t\textquotesingle{}e\textquotesingle{} -\/ edycja kontaktow\textbackslash{}n\char`\"{}
+\item 
+\#define \mbox{\hyperlink{templates_8h_a1cad54543a29738c971f72a63a6e27c2}{A\+L\+O\+K\+\_\+\+C\+H\+E\+CK}}(wsk)~\{if(wsk == N\+U\+LL)\{printf(\char`\"{}Blad alokacji pamieci w lini\+: \%d\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+); return -\/1;\}\}
+\item 
+\#define \mbox{\hyperlink{templates_8h_abe0fd94e7d5876b621f148dadb21bbad}{F\+U\+N\+\_\+\+C\+H\+E\+CK}}(fun)~\{if(fun != 0) return -\/1;\}
+\item 
+\#define \mbox{\hyperlink{templates_8h_a61d85d10215a7d4c9ff7d20f11eaa518}{F\+U\+N\+\_\+\+M\+\_\+\+C\+H\+E\+CK}}(fun)~\{if(fun != 0) \{printf(\char`\"{}cos poszlo nie tak\textbackslash{}nsprobuj jeszcze raz\textbackslash{}n\char`\"{}); break;\}\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structad}{ad}} \mbox{\hyperlink{templates_8h_a96bd52f20c323e5e95b4f39fee6fc92a}{adres}}
+\begin{DoxyCompactList}\small\item\em struktura pomocnicza do przechowywania adres{\ucr}w \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structda}{da}} \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}}
+\begin{DoxyCompactList}\small\item\em struktura b{\ucr}d{\ucr}ca podstaw{\ucr} listy kontakt{\ucr}w \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structop}{op}} \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}}
+\begin{DoxyCompactList}\small\item\em g{\ucr}{\ucr}wna struktura programu, gdzie przechowywane s{\ucr} wszystkie operacjie i stan konta \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9}{what\+\_\+cont}} \{ \mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9aec34b0b90541576a22697631105dc847}{N\+EW}}, 
+\mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9a4a66a278cca4fd8b5c94229dbd542426}{E\+X\+I\+S\+T\+I\+NG}}
+ \}
+\begin{DoxyCompactList}\small\item\em wyliczenie dla funkcji \mbox{\hyperlink{templates_8h_a9818df70f59e5b525e07ccd7de4f4065}{dodaj\+\_\+odbiorce()}} \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4}{what\+\_\+list}} \{ \mbox{\hyperlink{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4aea5e596a553757a677cb4da4c8a1f935}{S\+M\+A\+LL}}, 
+\mbox{\hyperlink{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4a4e4825dfb3c3a4c83ed71e2a38a3a70d}{B\+IG}}
+ \}
+\item 
+enum \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}} \{ \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bba053cb139f4b2333482449705c529b1e9}{R\+E\+AL}}, 
+\mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bbab2f0cd22b1963becef8b91d29d567fe8}{T\+E\+ST}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{templates_8h_a84cea4873f00989802059f2fb16f48cc}{doladuj\+\_\+konto}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$, \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}})
+\begin{DoxyCompactList}\small\item\em doładowuje konto \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{templates_8h_a83d7bc9661c33ad81b6e2afe4ca6b796}{wysw\+\_\+stan}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$)
+\begin{DoxyCompactList}\small\item\em wyświetla stan konta w danym momencie \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{templates_8h_a15d7a4b45e95ede772a7511a2443b188}{nowy\+\_\+przelew}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em robi nowy przelew \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{templates_8h_a9818df70f59e5b525e07ccd7de4f4065}{dodaj\+\_\+odbiorce}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$, \mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9}{what\+\_\+cont}}, \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}})
+\item 
+\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$ \mbox{\hyperlink{templates_8h_a7b31983e7083ab5fecb1b176fee6bef0}{find\+\_\+cont}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em funkcja pobiera podwójny wskaźnik tylko dlatego, żeby móc... w sumie to chyba wystarczyłby jej jeden wskaźnik?? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{templates_8h_ad6d93f10cceb9ff13e1c60339e4afbda}{print\+\_\+list\+\_\+odb}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$, unsigned int)
+\item 
+void \mbox{\hyperlink{templates_8h_a950ca04379ebcd3bc2916b60265bbdca}{print\+\_\+sorted}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$)
+\item 
+void \mbox{\hyperlink{templates_8h_aa3421f0f8734b59a1d87edbe5f23c31c}{delete\+\_\+contact}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$, \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$)
+\begin{DoxyCompactList}\small\item\em usuwa kontakt z listy jednokierukowej \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{templates_8h_a0adef2b51dfda8c15ede374ef3917e0b}{print\+\_\+history}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$)
+\begin{DoxyCompactList}\small\item\em wyświetla historię operacji \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{templates_8h_a76544a3ca73223b8939791ccfe28cf40}{edit\+\_\+contacts}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em główna funkcja odpowiedzialna za edycję kontaktów \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{templates_8h_ae39ffbb959da0efcd4de167b80357f42}{get\+\_\+data}} (char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{templates_8h_a1cad54543a29738c971f72a63a6e27c2}\label{templates_8h_a1cad54543a29738c971f72a63a6e27c2}} 
+\index{templates.h@{templates.h}!ALOK\_CHECK@{ALOK\_CHECK}}
+\index{ALOK\_CHECK@{ALOK\_CHECK}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{ALOK\_CHECK}{ALOK\_CHECK}}
+{\footnotesize\ttfamily \#define A\+L\+O\+K\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{wsk }\end{DoxyParamCaption})~\{if(wsk == N\+U\+LL)\{printf(\char`\"{}Blad alokacji pamieci w lini\+: \%d\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+); return -\/1;\}\}}
+
+sprawdza, czy pami{\ucr}{\ucr} zosta{\ucr}a poprawnie zaalokowana \mbox{\Hypertarget{templates_8h_abe0fd94e7d5876b621f148dadb21bbad}\label{templates_8h_abe0fd94e7d5876b621f148dadb21bbad}} 
+\index{templates.h@{templates.h}!FUN\_CHECK@{FUN\_CHECK}}
+\index{FUN\_CHECK@{FUN\_CHECK}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{FUN\_CHECK}{FUN\_CHECK}}
+{\footnotesize\ttfamily \#define F\+U\+N\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{fun }\end{DoxyParamCaption})~\{if(fun != 0) return -\/1;\}}
+
+\mbox{\Hypertarget{templates_8h_a61d85d10215a7d4c9ff7d20f11eaa518}\label{templates_8h_a61d85d10215a7d4c9ff7d20f11eaa518}} 
+\index{templates.h@{templates.h}!FUN\_M\_CHECK@{FUN\_M\_CHECK}}
+\index{FUN\_M\_CHECK@{FUN\_M\_CHECK}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{FUN\_M\_CHECK}{FUN\_M\_CHECK}}
+{\footnotesize\ttfamily \#define F\+U\+N\+\_\+\+M\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{fun }\end{DoxyParamCaption})~\{if(fun != 0) \{printf(\char`\"{}cos poszlo nie tak\textbackslash{}nsprobuj jeszcze raz\textbackslash{}n\char`\"{}); break;\}\}}
+
+makro kt{\ucr}re przerywa p{\ucr}tle, gdy funkcja nie zwr{\ucr}ci \textquotesingle{}0\textquotesingle{} \mbox{\Hypertarget{templates_8h_a0240ac851181b84ac374872dc5434ee4}\label{templates_8h_a0240ac851181b84ac374872dc5434ee4}} 
+\index{templates.h@{templates.h}!N@{N}}
+\index{N@{N}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~30}
+
+\mbox{\Hypertarget{templates_8h_a910589e44deac11c3957ec55992cac52}\label{templates_8h_a910589e44deac11c3957ec55992cac52}} 
+\index{templates.h@{templates.h}!OPCJE@{OPCJE}}
+\index{OPCJE@{OPCJE}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{OPCJE}{OPCJE}}
+{\footnotesize\ttfamily \#define O\+P\+C\+JE~\char`\"{}\textbackslash{}n\textquotesingle{}q\textquotesingle{} -\/ zamknij program\textbackslash{}t\textquotesingle{}d\textquotesingle{} -\/ doladuj konto\textbackslash{}t\textquotesingle{}w\textquotesingle{} -\/ wyswietl stan\textbackslash{}t\textquotesingle{}h\textquotesingle{} -\/ pokaz historie operacji\textbackslash{}n\textbackslash{}t\textbackslash{}t\textbackslash{}t\textquotesingle{}p\textquotesingle{} -\/ przelew\textbackslash{}t\textquotesingle{}n\textquotesingle{} -\/ nowy kontakt\textbackslash{}t\textquotesingle{}k\textquotesingle{} -\/ kontakty\textbackslash{}t\textquotesingle{}e\textquotesingle{} -\/ edycja kontaktow\textbackslash{}n\char`\"{}}
+
+\mbox{\Hypertarget{templates_8h_af933676109efed7ab34cea71d748a517}\label{templates_8h_af933676109efed7ab34cea71d748a517}} 
+\index{templates.h@{templates.h}!S@{S}}
+\index{S@{S}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily \#define S~40}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{templates_8h_a96bd52f20c323e5e95b4f39fee6fc92a}\label{templates_8h_a96bd52f20c323e5e95b4f39fee6fc92a}} 
+\index{templates.h@{templates.h}!adres@{adres}}
+\index{adres@{adres}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{adres}{adres}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structad}{ad}}  \mbox{\hyperlink{templates_8h_a96bd52f20c323e5e95b4f39fee6fc92a}{adres}}}
+
+
+
+struktura pomocnicza do przechowywania adres{\ucr}w 
+
+\mbox{\Hypertarget{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}\label{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}} 
+\index{templates.h@{templates.h}!dane@{dane}}
+\index{dane@{dane}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{dane}{dane}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structda}{da}} \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}}}
+
+
+
+struktura b{\ucr}d{\ucr}ca podstaw{\ucr} listy kontakt{\ucr}w 
+
+\mbox{\Hypertarget{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}\label{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}} 
+\index{templates.h@{templates.h}!operacja@{operacja}}
+\index{operacja@{operacja}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{operacja}{operacja}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structop}{op}} \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}}}
+
+
+
+g{\ucr}{\ucr}wna struktura programu, gdzie przechowywane s{\ucr} wszystkie operacjie i stan konta 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}\label{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}} 
+\index{templates.h@{templates.h}!test@{test}}
+\index{test@{test}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REAL@{REAL}!templates.h@{templates.h}}\index{templates.h@{templates.h}!REAL@{REAL}}}\mbox{\Hypertarget{templates_8h_a05a671c66aefea124cc08b76ea6d30bba053cb139f4b2333482449705c529b1e9}\label{templates_8h_a05a671c66aefea124cc08b76ea6d30bba053cb139f4b2333482449705c529b1e9}} 
+R\+E\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST@{TEST}!templates.h@{templates.h}}\index{templates.h@{templates.h}!TEST@{TEST}}}\mbox{\Hypertarget{templates_8h_a05a671c66aefea124cc08b76ea6d30bbab2f0cd22b1963becef8b91d29d567fe8}\label{templates_8h_a05a671c66aefea124cc08b76ea6d30bbab2f0cd22b1963becef8b91d29d567fe8}} 
+T\+E\+ST&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{templates_8h_a7b184b8a2ed75286073d50526f5596e9}\label{templates_8h_a7b184b8a2ed75286073d50526f5596e9}} 
+\index{templates.h@{templates.h}!what\_cont@{what\_cont}}
+\index{what\_cont@{what\_cont}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{what\_cont}{what\_cont}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9}{what\+\_\+cont}}}
+
+
+
+wyliczenie dla funkcji \mbox{\hyperlink{templates_8h_a9818df70f59e5b525e07ccd7de4f4065}{dodaj\+\_\+odbiorce()}} 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEW@{NEW}!templates.h@{templates.h}}\index{templates.h@{templates.h}!NEW@{NEW}}}\mbox{\Hypertarget{templates_8h_a7b184b8a2ed75286073d50526f5596e9aec34b0b90541576a22697631105dc847}\label{templates_8h_a7b184b8a2ed75286073d50526f5596e9aec34b0b90541576a22697631105dc847}} 
+N\+EW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXISTING@{EXISTING}!templates.h@{templates.h}}\index{templates.h@{templates.h}!EXISTING@{EXISTING}}}\mbox{\Hypertarget{templates_8h_a7b184b8a2ed75286073d50526f5596e9a4a66a278cca4fd8b5c94229dbd542426}\label{templates_8h_a7b184b8a2ed75286073d50526f5596e9a4a66a278cca4fd8b5c94229dbd542426}} 
+E\+X\+I\+S\+T\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4}\label{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4}} 
+\index{templates.h@{templates.h}!what\_list@{what\_list}}
+\index{what\_list@{what\_list}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{what\_list}{what\_list}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4}{what\+\_\+list}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SMALL@{SMALL}!templates.h@{templates.h}}\index{templates.h@{templates.h}!SMALL@{SMALL}}}\mbox{\Hypertarget{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4aea5e596a553757a677cb4da4c8a1f935}\label{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4aea5e596a553757a677cb4da4c8a1f935}} 
+S\+M\+A\+LL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIG@{BIG}!templates.h@{templates.h}}\index{templates.h@{templates.h}!BIG@{BIG}}}\mbox{\Hypertarget{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4a4e4825dfb3c3a4c83ed71e2a38a3a70d}\label{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4a4e4825dfb3c3a4c83ed71e2a38a3a70d}} 
+B\+IG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{templates_8h_aa3421f0f8734b59a1d87edbe5f23c31c}\label{templates_8h_aa3421f0f8734b59a1d87edbe5f23c31c}} 
+\index{templates.h@{templates.h}!delete\_contact@{delete\_contact}}
+\index{delete\_contact@{delete\_contact}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{delete\_contact()}{delete\_contact()}}
+{\footnotesize\ttfamily void delete\+\_\+contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{contacts,  }\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{wanted }\end{DoxyParamCaption})}
+
+
+
+usuwa kontakt z listy jednokierukowej 
+
+zwalnia pamięć zajmowaną przez kontakt i odpowiednio manipuluje sąsiednimi elementami z listy. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$contacts} & lista kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$wanted} & wskaźnik na kontakt, który chcemy usunąć \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{templates_8h_a9818df70f59e5b525e07ccd7de4f4065}\label{templates_8h_a9818df70f59e5b525e07ccd7de4f4065}} 
+\index{templates.h@{templates.h}!dodaj\_odbiorce@{dodaj\_odbiorce}}
+\index{dodaj\_odbiorce@{dodaj\_odbiorce}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{dodaj\_odbiorce()}{dodaj\_odbiorce()}}
+{\footnotesize\ttfamily int dodaj\+\_\+odbiorce (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{lista\+\_\+odb,  }\item[{\mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9}{what\+\_\+cont}}}]{contact,  }\item[{\mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}}}]{use }\end{DoxyParamCaption})}
+
+funkcja ma dwa główne tryby\+: 1)dodawanie nowego odbiorcy 2)edycja już istniejącego kontaktu przy dodawaniu nowego następuje alokacja kontaktu na końcu listy a w przypadku edycji tylko zmiana wartości i nazw odpowiednich zmiennych funkcję można również wywołac w ramach testu i wtedy nie będzie ona pobierała od użytkownika żadnych wartości, tylko nadpisze je z góry. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+odb} & podwójny wskaźnik na listę kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em contact} & wartość decydująca, czy funkcja ma tworzyć nowy kontakt, czy edytować istniejący \\
+\hline
+\mbox{\texttt{ in}}  & {\em use} & wartość decydująca, czy funkcja działa w ramach testu, czy nie \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & dla zakończenia z sukcesem \\
+\hline
+{\em -\/1} & dla zakończenia z błedem \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{templates_8h_a84cea4873f00989802059f2fb16f48cc}\label{templates_8h_a84cea4873f00989802059f2fb16f48cc}} 
+\index{templates.h@{templates.h}!doladuj\_konto@{doladuj\_konto}}
+\index{doladuj\_konto@{doladuj\_konto}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{doladuj\_konto()}{doladuj\_konto()}}
+{\footnotesize\ttfamily int doladuj\+\_\+konto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{lista\+\_\+op,  }\item[{\mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}}}]{use }\end{DoxyParamCaption})}
+
+
+
+doładowuje konto 
+
+alokuje nową operację doładowania o wartości wprowadzonej przez użytownika a jako nazwisko odbiorcy podaje nazwisko autora 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+op} & podwójny wskaźnik na listę operacji \\
+\hline
+\mbox{\texttt{ in}}  & {\em use} & determinuje, czy funkcja jest użyta w ramach testu, czy we właściwym programie \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & kiedy zakończy działanie sukcesem \\
+\hline
+{\em -\/1} & kiedy nastąpi jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{templates_8h_a76544a3ca73223b8939791ccfe28cf40}\label{templates_8h_a76544a3ca73223b8939791ccfe28cf40}} 
+\index{templates.h@{templates.h}!edit\_contacts@{edit\_contacts}}
+\index{edit\_contacts@{edit\_contacts}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{edit\_contacts()}{edit\_contacts()}}
+{\footnotesize\ttfamily int edit\+\_\+contacts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{contacts }\end{DoxyParamCaption})}
+
+
+
+główna funkcja odpowiedzialna za edycję kontaktów 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$contacts} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & przy zakończeniu sukcesem \\
+\hline
+{\em -\/1} & przy błędzie \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{templates_8h_a7b31983e7083ab5fecb1b176fee6bef0}\label{templates_8h_a7b31983e7083ab5fecb1b176fee6bef0}} 
+\index{templates.h@{templates.h}!find\_cont@{find\_cont}}
+\index{find\_cont@{find\_cont}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{find\_cont()}{find\_cont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}}$\ast$$\ast$ find\+\_\+cont (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{kontakty }\end{DoxyParamCaption})}
+
+
+
+funkcja pobiera podwójny wskaźnik tylko dlatego, żeby móc... w sumie to chyba wystarczyłby jej jeden wskaźnik?? 
+
+funkcja działa tak, że najpierw wyświetla listę kontaktów wraz z ich numerami a potem pobiera numer wskazany przez niego. ~\newline
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$kontakty} & podwójny wskaźnik na listę kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em wsk} & podwójny wskaźnik na szukany kontakt \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{templates_8h_ae39ffbb959da0efcd4de167b80357f42}\label{templates_8h_ae39ffbb959da0efcd4de167b80357f42}} 
+\index{templates.h@{templates.h}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily void get\+\_\+data (\begin{DoxyParamCaption}\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+pobiera od użytkownika słowa, doputy dopóki nie napotka znaku \textquotesingle{}~\newline
+\textquotesingle{} o ile jest ono mniejsze niż 40 znaków 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$word} & wskaźnik na tablicę gdzie mają być umieszczone pobrane słowa \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{templates_8h_a15d7a4b45e95ede772a7511a2443b188}\label{templates_8h_a15d7a4b45e95ede772a7511a2443b188}} 
+\index{templates.h@{templates.h}!nowy\_przelew@{nowy\_przelew}}
+\index{nowy\_przelew@{nowy\_przelew}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{nowy\_przelew()}{nowy\_przelew()}}
+{\footnotesize\ttfamily int nowy\+\_\+przelew (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{lista\+\_\+odb,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{lista\+\_\+op }\end{DoxyParamCaption})}
+
+
+
+robi nowy przelew 
+
+pobiera od użytkownika odpowiednie informacje po czym alokuje kolejną operacja na końcu listy 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+odb} & podwójny wskaźnik na listę kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+op} & podwójny wskaźnik na listę operacji \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & dla zakończenia z sukcesem \\
+\hline
+{\em -\/1} & dla zakończenia z błedem \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{templates_8h_a0adef2b51dfda8c15ede374ef3917e0b}\label{templates_8h_a0adef2b51dfda8c15ede374ef3917e0b}} 
+\index{templates.h@{templates.h}!print\_history@{print\_history}}
+\index{print\_history@{print\_history}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{print\_history()}{print\_history()}}
+{\footnotesize\ttfamily void print\+\_\+history (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+wyświetla historię operacji 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$op} & wskaźnik na historię operacji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{templates_8h_ad6d93f10cceb9ff13e1c60339e4afbda}\label{templates_8h_ad6d93f10cceb9ff13e1c60339e4afbda}} 
+\index{templates.h@{templates.h}!print\_list\_odb@{print\_list\_odb}}
+\index{print\_list\_odb@{print\_list\_odb}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{print\_list\_odb()}{print\_list\_odb()}}
+{\footnotesize\ttfamily void print\+\_\+list\+\_\+odb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{templates_8h_a950ca04379ebcd3bc2916b60265bbdca}\label{templates_8h_a950ca04379ebcd3bc2916b60265bbdca}} 
+\index{templates.h@{templates.h}!print\_sorted@{print\_sorted}}
+\index{print\_sorted@{print\_sorted}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{print\_sorted()}{print\_sorted()}}
+{\footnotesize\ttfamily void print\+\_\+sorted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{contacts }\end{DoxyParamCaption})}
+
+wyswietla liste kontakow posortowaną w wybrany przez uzytkownika sposob 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$contacts} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{templates_8h_a83d7bc9661c33ad81b6e2afe4ca6b796}\label{templates_8h_a83d7bc9661c33ad81b6e2afe4ca6b796}} 
+\index{templates.h@{templates.h}!wysw\_stan@{wysw\_stan}}
+\index{wysw\_stan@{wysw\_stan}!templates.h@{templates.h}}
+\doxysubsubsection{\texorpdfstring{wysw\_stan()}{wysw\_stan()}}
+{\footnotesize\ttfamily void wysw\+\_\+stan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{lista\+\_\+op }\end{DoxyParamCaption})}
+
+
+
+wyświetla stan konta w danym momencie 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$lista\+\_\+op} & wskaźnik na listę operacji \\
+\hline
+\end{DoxyParams}

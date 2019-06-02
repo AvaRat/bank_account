@@ -1,0 +1,63 @@
+\hypertarget{tests_8c}{}\doxysection{tests.\+c File Reference}
+\label{tests_8c}\index{tests.c@{tests.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}templates.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tests_8c_a7506bbf0d570d1529412ca72d5cc2561}{usun\+\_\+pierwszy}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$kontakty)
+\begin{DoxyCompactList}\small\item\em funkcja testuj{\ucr}ca us{\ucr}wanie jedynego kontaktu w li{\ucr}cie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tests_8c_af5e853f7bcb8d003291f3504205cc5c4}{from\+\_\+scratch}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$kontakty, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$history)
+\begin{DoxyCompactList}\small\item\em test, czy wszystko dobrze dziala gdy otwieramy program z pust{\ucr} baz{\ucr} danych (pustym plikiem) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tests_8c_a9296e4b659b04e11b052e8ce0169a152}{add\+\_\+a\+\_\+lot}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$kontakty, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$history)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tests_8c_a9296e4b659b04e11b052e8ce0169a152}\label{tests_8c_a9296e4b659b04e11b052e8ce0169a152}} 
+\index{tests.c@{tests.c}!add\_a\_lot@{add\_a\_lot}}
+\index{add\_a\_lot@{add\_a\_lot}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{add\_a\_lot()}{add\_a\_lot()}}
+{\footnotesize\ttfamily void add\+\_\+a\+\_\+lot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{kontakty,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{history }\end{DoxyParamCaption})}
+
+funkcja sprawdza, czy mo{\ucr}emy doda{\ucr} wilkie ilo{\ucr}ci danych (10000 kontak{\ucr}w i 10000 operacji do{\ucr}adowania) i w jakim czasie jeste{\ucr}my w stanie to zrobi{\ucr}. Ponad to testuje ona czy du{\ucr}a ilo{\ucr}{\ucr} operacji nie op{\ucr}ni odczytywania stanu konta. ({\ucr}eby odczyta{\ucr} stan konta trzeba \char`\"{}dolecie{\ucr}\char`\"{} do ko{\ucr}ca listy operacji) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$kontakty} & lista kontakt{\ucr}w \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$history} & lista operacji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tests_8c_af5e853f7bcb8d003291f3504205cc5c4}\label{tests_8c_af5e853f7bcb8d003291f3504205cc5c4}} 
+\index{tests.c@{tests.c}!from\_scratch@{from\_scratch}}
+\index{from\_scratch@{from\_scratch}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{from\_scratch()}{from\_scratch()}}
+{\footnotesize\ttfamily void from\+\_\+scratch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{kontakty,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{history }\end{DoxyParamCaption})}
+
+
+
+test, czy wszystko dobrze dziala gdy otwieramy program z pust{\ucr} baz{\ucr} danych (pustym plikiem) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$kontakty} & lista kontakt{\ucr}w \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$history} & lista operacji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tests_8c_a7506bbf0d570d1529412ca72d5cc2561}\label{tests_8c_a7506bbf0d570d1529412ca72d5cc2561}} 
+\index{tests.c@{tests.c}!usun\_pierwszy@{usun\_pierwszy}}
+\index{usun\_pierwszy@{usun\_pierwszy}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{usun\_pierwszy()}{usun\_pierwszy()}}
+{\footnotesize\ttfamily void usun\+\_\+pierwszy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{kontakty }\end{DoxyParamCaption})}
+
+
+
+funkcja testuj{\ucr}ca us{\ucr}wanie jedynego kontaktu w li{\ucr}cie 
+
+funkcja nie wczytuje bazy danych z pliku, lecz alokuje jeden kontakt a nast{\ucr}pnie sprawdza, czy wszystko dobrze dzia{\ucr}a 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$kontakty} & lista kontakt{\ucr}w \\
+\hline
+\end{DoxyParams}

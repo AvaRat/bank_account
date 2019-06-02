@@ -1,9 +1,0 @@
-digraph "find_cont"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node10 [label="find_cont",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="print_list_odb",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$account_8c.html#a77fe0e8e4902c178121d043c9dbe71c9"];
-}

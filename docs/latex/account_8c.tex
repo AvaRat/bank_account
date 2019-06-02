@@ -1,0 +1,308 @@
+\hypertarget{account_8c}{}\doxysection{account.\+c File Reference}
+\label{account_8c}\index{account.c@{account.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}tests.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}files.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}templates.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{account_8c_a16893725643f7b501340bdc916732a08}{main}} (int arg\+\_\+c, char $\ast$arg\+\_\+v\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em funkcja główna \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{account_8c_a163365b6c9805d19548300e7003a5760}{doladuj\+\_\+konto}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$lista\+\_\+op, \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}} use)
+\begin{DoxyCompactList}\small\item\em doładowuje konto \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{account_8c_ae1eb2f971d4292e573f1f3e75f70b214}{wysw\+\_\+stan}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$lista\+\_\+op)
+\begin{DoxyCompactList}\small\item\em wyświetla stan konta w danym momencie \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{account_8c_a27e6d45d629e6d46a47a96e55abd9c48}{nowy\+\_\+przelew}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$lista\+\_\+odb, \mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$lista\+\_\+op)
+\begin{DoxyCompactList}\small\item\em robi nowy przelew \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{account_8c_a2a8121ed2b278d6dd26b547116658ac3}{dodaj\+\_\+odbiorce}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$lista\+\_\+odb, \mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9}{what\+\_\+cont}} contact, \mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}} use)
+\item 
+\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$ \mbox{\hyperlink{account_8c_adf627d5b54e87d3efdc2a39c42fd7649}{find\+\_\+cont}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$kontakty)
+\begin{DoxyCompactList}\small\item\em funkcja pobiera podwójny wskaźnik tylko dlatego, żeby móc... w sumie to chyba wystarczyłby jej jeden wskaźnik?? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{account_8c_ad25b14bf26754d7f2a8f1b532adfdc89}{cmp\+\_\+names}} (const void $\ast$l, const void $\ast$r)
+\begin{DoxyCompactList}\small\item\em funkcja porownujaca imiona do sortowania \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{account_8c_a5420910ffbca4555d6def09071b63c8b}{cmp\+\_\+surnames}} (const void $\ast$l, const void $\ast$r)
+\begin{DoxyCompactList}\small\item\em funkcja porownujaca nazwiska do sortowania \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{account_8c_a1cbd29b3af1fc8b0b161460101860f04}{cmp\+\_\+address}} (const void $\ast$l, const void $\ast$r)
+\begin{DoxyCompactList}\small\item\em funkcja porownujaca miasto zamieszkania do sortowania \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{account_8c_a5eea61d64c2efdf42d03a79a06047c50}{print\+\_\+sorted}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$contacts)
+\item 
+void \mbox{\hyperlink{account_8c_a77fe0e8e4902c178121d043c9dbe71c9}{print\+\_\+list\+\_\+odb}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$contacts, \mbox{\hyperlink{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4}{what\+\_\+list}} list)
+\item 
+int \mbox{\hyperlink{account_8c_aa7377e0ba4300a90efefb1a96f70d2a6}{edit\+\_\+contacts}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$contacts)
+\begin{DoxyCompactList}\small\item\em główna funkcja odpowiedzialna za edycję kontaktów \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{account_8c_acc76305f6dbdd886b5b67329efdedb80}{delete\+\_\+contact}} (\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$contacts, \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$wanted)
+\begin{DoxyCompactList}\small\item\em usuwa kontakt z listy jednokierukowej \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{account_8c_ae88601bb735c5fea933d47c8c896cb92}{print\+\_\+history}} (\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$\mbox{\hyperlink{structop}{op}})
+\begin{DoxyCompactList}\small\item\em wyświetla historię operacji \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{account_8c_a9692aeffbca9bfe8f04e558098706c33}{get\+\_\+data}} (char $\ast$word)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{account_8c_a1cbd29b3af1fc8b0b161460101860f04}\label{account_8c_a1cbd29b3af1fc8b0b161460101860f04}} 
+\index{account.c@{account.c}!cmp\_address@{cmp\_address}}
+\index{cmp\_address@{cmp\_address}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{cmp\_address()}{cmp\_address()}}
+{\footnotesize\ttfamily int cmp\+\_\+address (\begin{DoxyParamCaption}\item[{const void $\ast$}]{l,  }\item[{const void $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+funkcja porownujaca miasto zamieszkania do sortowania 
+
+\mbox{\Hypertarget{account_8c_ad25b14bf26754d7f2a8f1b532adfdc89}\label{account_8c_ad25b14bf26754d7f2a8f1b532adfdc89}} 
+\index{account.c@{account.c}!cmp\_names@{cmp\_names}}
+\index{cmp\_names@{cmp\_names}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{cmp\_names()}{cmp\_names()}}
+{\footnotesize\ttfamily int cmp\+\_\+names (\begin{DoxyParamCaption}\item[{const void $\ast$}]{l,  }\item[{const void $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+funkcja porownujaca imiona do sortowania 
+
+\mbox{\Hypertarget{account_8c_a5420910ffbca4555d6def09071b63c8b}\label{account_8c_a5420910ffbca4555d6def09071b63c8b}} 
+\index{account.c@{account.c}!cmp\_surnames@{cmp\_surnames}}
+\index{cmp\_surnames@{cmp\_surnames}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{cmp\_surnames()}{cmp\_surnames()}}
+{\footnotesize\ttfamily int cmp\+\_\+surnames (\begin{DoxyParamCaption}\item[{const void $\ast$}]{l,  }\item[{const void $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+funkcja porownujaca nazwiska do sortowania 
+
+\mbox{\Hypertarget{account_8c_acc76305f6dbdd886b5b67329efdedb80}\label{account_8c_acc76305f6dbdd886b5b67329efdedb80}} 
+\index{account.c@{account.c}!delete\_contact@{delete\_contact}}
+\index{delete\_contact@{delete\_contact}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{delete\_contact()}{delete\_contact()}}
+{\footnotesize\ttfamily void delete\+\_\+contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{contacts,  }\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{wanted }\end{DoxyParamCaption})}
+
+
+
+usuwa kontakt z listy jednokierukowej 
+
+zwalnia pamięć zajmowaną przez kontakt i odpowiednio manipuluje sąsiednimi elementami z listy. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$contacts} & lista kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$wanted} & wskaźnik na kontakt, który chcemy usunąć \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{account_8c_a2a8121ed2b278d6dd26b547116658ac3}\label{account_8c_a2a8121ed2b278d6dd26b547116658ac3}} 
+\index{account.c@{account.c}!dodaj\_odbiorce@{dodaj\_odbiorce}}
+\index{dodaj\_odbiorce@{dodaj\_odbiorce}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{dodaj\_odbiorce()}{dodaj\_odbiorce()}}
+{\footnotesize\ttfamily int dodaj\+\_\+odbiorce (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{lista\+\_\+odb,  }\item[{\mbox{\hyperlink{templates_8h_a7b184b8a2ed75286073d50526f5596e9}{what\+\_\+cont}}}]{contact,  }\item[{\mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}}}]{use }\end{DoxyParamCaption})}
+
+funkcja ma dwa główne tryby\+: 1)dodawanie nowego odbiorcy 2)edycja już istniejącego kontaktu przy dodawaniu nowego następuje alokacja kontaktu na końcu listy a w przypadku edycji tylko zmiana wartości i nazw odpowiednich zmiennych funkcję można również wywołac w ramach testu i wtedy nie będzie ona pobierała od użytkownika żadnych wartości, tylko nadpisze je z góry. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+odb} & podwójny wskaźnik na listę kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em contact} & wartość decydująca, czy funkcja ma tworzyć nowy kontakt, czy edytować istniejący \\
+\hline
+\mbox{\texttt{ in}}  & {\em use} & wartość decydująca, czy funkcja działa w ramach testu, czy nie \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & dla zakończenia z sukcesem \\
+\hline
+{\em -\/1} & dla zakończenia z błedem \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{account_8c_a163365b6c9805d19548300e7003a5760}\label{account_8c_a163365b6c9805d19548300e7003a5760}} 
+\index{account.c@{account.c}!doladuj\_konto@{doladuj\_konto}}
+\index{doladuj\_konto@{doladuj\_konto}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{doladuj\_konto()}{doladuj\_konto()}}
+{\footnotesize\ttfamily int doladuj\+\_\+konto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{lista\+\_\+op,  }\item[{\mbox{\hyperlink{templates_8h_a05a671c66aefea124cc08b76ea6d30bb}{test}}}]{use }\end{DoxyParamCaption})}
+
+
+
+doładowuje konto 
+
+alokuje nową operację doładowania o wartości wprowadzonej przez użytownika a jako nazwisko odbiorcy podaje nazwisko autora 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+op} & podwójny wskaźnik na listę operacji \\
+\hline
+\mbox{\texttt{ in}}  & {\em use} & determinuje, czy funkcja jest użyta w ramach testu, czy we właściwym programie \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & kiedy zakończy działanie sukcesem \\
+\hline
+{\em -\/1} & kiedy nastąpi jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{account_8c_aa7377e0ba4300a90efefb1a96f70d2a6}\label{account_8c_aa7377e0ba4300a90efefb1a96f70d2a6}} 
+\index{account.c@{account.c}!edit\_contacts@{edit\_contacts}}
+\index{edit\_contacts@{edit\_contacts}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{edit\_contacts()}{edit\_contacts()}}
+{\footnotesize\ttfamily int edit\+\_\+contacts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{contacts }\end{DoxyParamCaption})}
+
+
+
+główna funkcja odpowiedzialna za edycję kontaktów 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$contacts} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & przy zakończeniu sukcesem \\
+\hline
+{\em -\/1} & przy błędzie \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{account_8c_adf627d5b54e87d3efdc2a39c42fd7649}\label{account_8c_adf627d5b54e87d3efdc2a39c42fd7649}} 
+\index{account.c@{account.c}!find\_cont@{find\_cont}}
+\index{find\_cont@{find\_cont}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{find\_cont()}{find\_cont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$ find\+\_\+cont (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{kontakty }\end{DoxyParamCaption})}
+
+
+
+funkcja pobiera podwójny wskaźnik tylko dlatego, żeby móc... w sumie to chyba wystarczyłby jej jeden wskaźnik?? 
+
+funkcja działa tak, że najpierw wyświetla listę kontaktów wraz z ich numerami a potem pobiera numer wskazany przez niego. ~\newline
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$kontakty} & podwójny wskaźnik na listę kontaktów \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em wsk} & podwójny wskaźnik na szukany kontakt \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{account_8c_a9692aeffbca9bfe8f04e558098706c33}\label{account_8c_a9692aeffbca9bfe8f04e558098706c33}} 
+\index{account.c@{account.c}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily void get\+\_\+data (\begin{DoxyParamCaption}\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+pobiera od użytkownika słowa, doputy dopóki nie napotka znaku \textquotesingle{}~\newline
+\textquotesingle{} o ile jest ono mniejsze niż 40 znaków 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em $\ast$word} & wskaźnik na tablicę gdzie mają być umieszczone pobrane słowa \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{account_8c_a16893725643f7b501340bdc916732a08}\label{account_8c_a16893725643f7b501340bdc916732a08}} 
+\index{account.c@{account.c}!main@{main}}
+\index{main@{main}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{arg\+\_\+c,  }\item[{char $\ast$}]{arg\+\_\+v\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+funkcja główna 
+
+\begin{DoxyAuthor}{Author}
+Marcel Kaliński 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]maksymalna długość imion (ze spacjami)wynosi 30 a innych nazw 40 \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+przekroczenie niektórych z tych wartości spowoduje wyłożenie się programu 
+
+pliki z bazą danych (kontakty i historia operacji) muszą znajdować się w tym samym folderze co plik wykonywalny
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em arg\+\_\+c} & liczba argumentów wywołania programu \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$arg\+\_\+v\mbox{[}$\,$\mbox{]}} & tablica wskaźników do argumentów wywołania programu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & jeśli funkcja zakończyła się powodzeniem \\
+\hline
+\end{DoxyRetVals}
+$<$ pusty wskaźnik do pszyszłej listy operacji
+
+$<$ pusty wskaźnik do pszyszłej listy kontaktów
+
+$<$ pobierana od użytkownika litera decydująca o konkretnym działaniu\mbox{\Hypertarget{account_8c_a27e6d45d629e6d46a47a96e55abd9c48}\label{account_8c_a27e6d45d629e6d46a47a96e55abd9c48}} 
+\index{account.c@{account.c}!nowy\_przelew@{nowy\_przelew}}
+\index{nowy\_przelew@{nowy\_przelew}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{nowy\_przelew()}{nowy\_przelew()}}
+{\footnotesize\ttfamily int int nowy\+\_\+przelew (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{lista\+\_\+odb,  }\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$$\ast$}]{lista\+\_\+op }\end{DoxyParamCaption})}
+
+
+
+robi nowy przelew 
+
+pobiera od użytkownika odpowiednie informacje po czym alokuje kolejną operacja na końcu listy 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+odb} & podwójny wskaźnik na listę kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$lista\+\_\+op} & podwójny wskaźnik na listę operacji \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & dla zakończenia z sukcesem \\
+\hline
+{\em -\/1} & dla zakończenia z błedem \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{account_8c_ae88601bb735c5fea933d47c8c896cb92}\label{account_8c_ae88601bb735c5fea933d47c8c896cb92}} 
+\index{account.c@{account.c}!print\_history@{print\_history}}
+\index{print\_history@{print\_history}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{print\_history()}{print\_history()}}
+{\footnotesize\ttfamily void print\+\_\+history (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+wyświetla historię operacji 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$op} & wskaźnik na historię operacji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{account_8c_a77fe0e8e4902c178121d043c9dbe71c9}\label{account_8c_a77fe0e8e4902c178121d043c9dbe71c9}} 
+\index{account.c@{account.c}!print\_list\_odb@{print\_list\_odb}}
+\index{print\_list\_odb@{print\_list\_odb}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{print\_list\_odb()}{print\_list\_odb()}}
+{\footnotesize\ttfamily void print\+\_\+list\+\_\+odb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$$\ast$}]{contacts,  }\item[{\mbox{\hyperlink{templates_8h_a5eefb9273e08452aa9e87c80c7e62ea4}{what\+\_\+list}}}]{list }\end{DoxyParamCaption})}
+
+wyswietla liste kontaktow w dwuch trybach\+: 1)mała lista -\/ tylko imiona i nazwiska (stworzona specjalnie pod funkcję \mbox{\hyperlink{account_8c_adf627d5b54e87d3efdc2a39c42fd7649}{find\+\_\+cont()}}) 2)duża lista -\/ wyświetla pełną listę wraz ze wszystkimi szczegułami 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$$\ast$contacts} & lista kontaktów \\
+\hline
+\mbox{\texttt{ in}}  & {\em list} & określa tryb działania funkcji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{account_8c_a5eea61d64c2efdf42d03a79a06047c50}\label{account_8c_a5eea61d64c2efdf42d03a79a06047c50}} 
+\index{account.c@{account.c}!print\_sorted@{print\_sorted}}
+\index{print\_sorted@{print\_sorted}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{print\_sorted()}{print\_sorted()}}
+{\footnotesize\ttfamily void print\+\_\+sorted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a8f7821279e16fde5ab7c81a190f48b19}{dane}} $\ast$}]{contacts }\end{DoxyParamCaption})}
+
+wyswietla liste kontakow posortowaną w wybrany przez uzytkownika sposob 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$contacts} & lista kontaktów \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{account_8c_ae1eb2f971d4292e573f1f3e75f70b214}\label{account_8c_ae1eb2f971d4292e573f1f3e75f70b214}} 
+\index{account.c@{account.c}!wysw\_stan@{wysw\_stan}}
+\index{wysw\_stan@{wysw\_stan}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{wysw\_stan()}{wysw\_stan()}}
+{\footnotesize\ttfamily void wysw\+\_\+stan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{templates_8h_a7ab35bc323c1687865dbcefb4926b97e}{operacja}} $\ast$}]{lista\+\_\+op }\end{DoxyParamCaption})}
+
+
+
+wyświetla stan konta w danym momencie 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$lista\+\_\+op} & wskaźnik na listę operacji \\
+\hline
+\end{DoxyParams}
